@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adnan Khan - ATS Friendly Dubai CV</title>
+    <style>
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f2f5f9;
+            font-family: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 30px 20px;
+        }
+        .cv-container {
+            max-width: 1100px;
+            width: 100%;
+            background: #ffffff;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 32% 68%;
+            border-radius: 0;
+            overflow: hidden;
+        }
+
+        /* LEFT PANEL – Dark (Dubai style) */
+        .left-panel {
+            background-color: #1e2b37;
+            color: #e0e7f0;
+            padding: 35px 25px;
+        }
+        .left-panel h1 {
+            color: white;
+            font-size: 34px;
+            font-weight: 600;
+            margin: 0 0 5px;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        .left-panel .subhead {
+            color: #f7b731;  /* gold */
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #f7b731;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        .left-panel .section-title {
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            margin: 30px 0 15px;
+            text-transform: uppercase;
+            border-left: 4px solid #f7b731;
+            padding-left: 15px;
+        }
+        .left-panel .info-item {
+            margin-bottom: 18px;
+        }
+        .left-panel .info-label {
+            font-weight: 600;
+            color: #a0b3c9;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        .left-panel .info-text {
+            color: white;
+            font-size: 16px;
+            font-weight: 400;
+            word-break: break-word;
+        }
+        .skill-tag {
+            background-color: #2d3e4f;
+            color: white;
+            padding: 6px 14px;
+            margin: 0 6px 8px 0;
+            display: inline-block;
+            font-size: 14px;
+            border-radius: 30px;
+            border: 1px solid #3f5567;
+        }
+        .strength-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .strength-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            color: #e0e7f0;
+        }
+        .strength-list li::before {
+            content: "▹";
+            color: #f7b731;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        .language-item {
+            margin-bottom: 12px;
+            color: white;
+        }
+        .language-item span {
+            display: block;
+            font-size: 16px;
+        }
+        .language-item .proficiency {
+            color: #b0c4de;
+            font-size: 14px;
+            margin-top: 2px;
+        }
+
+        /* RIGHT PANEL – White, clean */
+        .right-panel {
+            background: white;
+            padding: 35px 30px;
+        }
+        .right-panel .section-title {
+            color: #1e2b37;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 25px 0 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #f7b731;
+            padding-bottom: 6px;
+        }
+        .profile-summary {
+            background: #f8fafd;
+            padding: 18px 20px;
+            color: #1e2b37;
+            line-height: 1.7;
+            font-size: 15px;
+            border-left: 4px solid #f7b731;
+            margin-bottom: 10px;
+        }
+        .job-entry, .edu-entry {
+            margin-bottom: 25px;
+        }
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 5px;
+        }
+        .job-title {
+            font-weight: 700;
+            font-size: 18px;
+            color: #0f1a24;
+        }
+        .company {
+            font-weight: 600;
+            color: #2c5f8a;
+            margin: 2px 0 4px;
+        }
+        .date {
+            color: #f7b731;
+            font-weight: 500;
+            font-size: 15px;
+            background: #f0f4fa;
+            padding: 4px 12px;
+            border-radius: 30px;
+        }
+        .job-description {
+            color: #2c3e50;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-top: 10px;
+            padding-left: 0;
+            list-style: none;
+        }
+        .job-description li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 22px;
+        }
+        .job-description li::before {
+            content: "▹";
+            color: #f7b731;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        .edu-entry .degree {
+            font-weight: 700;
+            font-size: 17px;
+            color: #0f1a24;
+        }
+        .edu-entry .institution {
+            font-weight: 500;
+            color: #2c5f8a;
+        }
+        .edu-entry .details {
+            color: #4a5f73;
+            font-size: 14px;
+            margin-top: 3px;
+        }
+        .cert-list {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .cert-list li {
+            font-size: 15px;
+            color: #1e2b37;
+            border-bottom: 1px dashed #e0e8f0;
+            padding-bottom: 8px;
+        }
+        .cert-list li:last-child {
+            border-bottom: none;
+        }
+        .cert-name {
+            font-weight: 600;
+        }
+        .cert-org {
+            color: #2c5f8a;
+        }
+        .cert-date {
+            color: #5f6b7a;
+            font-size: 14px;
+            margin-left: 8px;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #e0e8f0;
+            margin: 20px 0;
+        }
+        .download-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: #1e2b37;
+            color: white;
+            text-align: center;
+            border-radius: 0;
+            margin-top: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+            border: 1px solid #f7b731;
+        }
+        .download-btn:hover {
+            background: #2a3a48;
+        }
+        @media (max-width: 700px) {
+            .cv-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Print friendly */
+        @media print {
+            body { background: white; padding: 0; }
+            .cv-container { box-shadow: none; }
+            .download-btn { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- LEFT COLUMN – Personal, Skills, Strengths, Languages -->
+        <div class="left-panel">
+            <h1>ADNAN KHAN</h1>
+            <div class="subhead">IT Professional & Computer Instructor</div>
+
+            <!-- Contact -->
+            <div class="section-title">Contact</div>
+            <div class="info-item">
+                <div class="info-label">Email</div>
+                <div class="info-text">adnanwahid9237@gmail.com</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Phone</div>
+                <div class="info-text">+92 317 2813921</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Location</div>
+                <div class="info-text">Karachi, Pakistan</div>
+            </div>
+
+            <!-- Skills -->
+            <div class="section-title">Skills</div>
+            <div>
+                <span class="skill-tag">Web Design</span>
+                <span class="skill-tag">HTML/CSS</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Graphic Design</span>
+                <span class="skill-tag">Network Administration</span>
+                <span class="skill-tag">Hardware Repair</span>
+                <span class="skill-tag">IT Support</span>
+                <span class="skill-tag">MS Office</span>
+                <span class="skill-tag">Teaching</span>
+                <span class="skill-tag">Freelancing</span>
+                <span class="skill-tag">Cybersecurity</span>
+                <span class="skill-tag">Software Engineering</span>
+                <!-- New skills from certificates -->
+                <span class="skill-tag">Video Editing</span>
+                <span class="skill-tag">Animation</span>
+                <span class="skill-tag">Entrepreneurship</span>
+            </div>
+
+            <!-- Languages (plain text) -->
+            <div class="section-title">Languages</div>
+            <div class="language-item">
+                <span>English</span>
+                <div class="proficiency">Professional working proficiency</div>
+            </div>
+            <div class="language-item">
+                <span>Urdu</span>
+                <div class="proficiency">Native</div>
+            </div>
+
+            <!-- Strengths -->
+            <div class="section-title">Strengths</div>
+            <ul class="strength-list">
+                <li>Technical Instruction</li>
+                <li>Curriculum Development</li>
+                <li>Problem Solving</li>
+                <li>Hardware Troubleshooting</li>
+                <li>Student Assessment</li>
+                <li>IT Infrastructure Management</li>
+            </ul>
+        </div>
+
+        <!-- RIGHT COLUMN – Profile, Experience, Education, Certifications -->
+        <div class="right-panel">
+            <!-- Profile -->
+            <div class="profile-summary">
+                <strong>Professional Profile</strong><br>
+                Dedicated IT professional with extensive training and teaching experience. Skilled in web development, network administration, and IT support with multiple certifications. Currently pursuing a Bachelor's in Computer Science to deepen technical expertise.
+            </div>
+
+            <!-- Work Experience -->
+            <div class="section-title">Work Experience</div>
+            <div class="job-entry">
+                <div class="job-header">
+                    <span class="job-title">Computer Operator & Instructor</span>
+                    <span class="date">Oct 2020 – Present</span>
+                </div>
+                <div class="company">SOS Technical Training Institute, Karachi</div>
+                <ul class="job-description">
+                    <li>Instruct 1000+ students in computer fundamentals, software applications, and IT concepts</li>
+                    <li>Develop curriculum and lesson plans for various IT courses</li>
+                    <li>Manage computer lab with 50+ systems, ensuring 99% uptime</li>
+                    <li>Provide technical support to staff and students</li>
+                </ul>
+            </div>
+            <div class="job-entry">
+                <div class="job-header">
+                    <span class="job-title">IT Intern</span>
+                    <span class="date">Feb 2021 (2 weeks)</span>
+                </div>
+                <div class="company">Finosys (Pvt) Limited, Karachi</div>
+                <ul class="job-description">
+                    <li>Completed intensive internship in software development lifecycle</li>
+                    <li>Assisted in troubleshooting technical issues in live environment</li>
+                    <li>Received satisfactory performance rating from director</li>
+                </ul>
+            </div>
+
+            <!-- Education (UPDATED with Virtual University) -->
+            <div class="section-title">Education</div>
+            <div class="edu-entry">
+                <div class="degree">Bachelor of Science in Computer Science</div>
+                <div class="institution">Virtual University of Pakistan</div>
+                <div class="details">In Progress (Expected Completion: 2027)</div>
+            </div>
+            <div class="edu-entry">
+                <div class="degree">Diploma of Associate Engineer</div>
+                <div class="institution">Computer Information Technology | Grade: B</div>
+                <div class="institution">Pakistani Swedish Institute of Technology, Karachi</div>
+                <div class="details">2019 – 2021 | Marks: 2152/3100</div>
+            </div>
+            <div class="edu-entry">
+                <div class="degree">Diploma in Information Technology (DIT)</div>
+                <div class="institution">Grade: A | SOS Technical Training Institute</div>
+                <div class="details">2018</div>
+            </div>
+            <div class="edu-entry">
+                <div class="degree">Matriculation (Science Group)</div>
+                <div class="institution">Grade: A | Board of Secondary Education, Karachi</div>
+                <div class="details">2016 | Marks: 592/850</div>
+            </div>
+
+            <!-- Certifications (plain list) -->
+            <div class="section-title">Certifications</div>
+            <ul class="cert-list">
+                <li><span class="cert-name">Advanced Diploma in Software Engineering</span> – <span class="cert-org">Aptech Learning Pakistan</span> <span class="cert-date">(2022, Grade: Credit)</span></li>
+                <li><span class="cert-name">Introduction to Cybersecurity</span> – <span class="cert-org">Cisco Networking Academy</span> <span class="cert-date">(Dec 2023)</span></li>
+                <li><span class="cert-name">Web Designing & Web Engineering</span> – <span class="cert-org">NAVTTC - Hunarmand Pakistan Program</span> <span class="cert-date">(2021, Grade: A+)</span></li>
+                <li><span class="cert-name">Graphic Design</span> – <span class="cert-org">DigiSkills Training Program</span> <span class="cert-date">(2022)</span></li>
+                <li><span class="cert-name">Freelancing</span> – <span class="cert-org">DigiSkills Training Program</span> <span class="cert-date">(2022)</span></li>
+                <li><span class="cert-name">Certificate in Information Technology</span> – <span class="cert-org">SOS Technical Training Institute</span> <span class="cert-date">(2021, Grade: A+)</span></li>
+                <li><span class="cert-name">Basic IT for Office Applications</span> – <span class="cert-org">City & Guilds of London Institute</span> <span class="cert-date">(2017, Grade: Pass)</span></li>
+                <li><span class="cert-name">English Language Program</span> – <span class="cert-org">The American Language Centre</span> <span class="cert-date">(2019, Grade: 82%)</span></li>
+                <li><span class="cert-name">Video Editing, Animation and Vlogging</span> – <span class="cert-org">DigiSkills Training Program</span> <span class="cert-date">(2026)</span></li>
+                <li><span class="cert-name">Startup Strategies and Entrepreneurship</span> – <span class="cert-org">DigiSkills Training Program</span> <span class="cert-date">(2026)</span></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <!-- Font Awesome for icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</body>
+</html>

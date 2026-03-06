@@ -5,30 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adnan Khan - CV</title>
     <style>
-        /* Reset & Base */
+        /* Reset & Base – full screen, no margins/padding */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body {
-            background: #f2f5f9;
-            font-family: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 30px 20px;
-        }
-        .cv-container {
-            max-width: 1100px;
+        html, body {
             width: 100%;
             background: #ffffff;
-            box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+            font-family: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
+        }
+        body {
+            display: block;
+        }
+        .cv-container {
+            width: 100%;
             display: grid;
             grid-template-columns: 32% 68%;
-            border-radius: 0;
-            overflow: hidden;
+            background: #ffffff;
         }
 
         /* LEFT PANEL – Dark (Dubai style) */
@@ -46,7 +41,7 @@
             line-height: 1.2;
         }
         .left-panel .subhead {
-            color: #f7b731;  /* gold */
+            color: #f7b731;
             font-size: 18px;
             font-weight: 500;
             margin-bottom: 30px;
@@ -233,12 +228,6 @@
             font-size: 14px;
             margin-left: 8px;
         }
-        hr {
-            border: 0;
-            height: 1px;
-            background: #e0e8f0;
-            margin: 20px 0;
-        }
         .download-btn {
             display: block;
             width: 100%;
@@ -246,11 +235,8 @@
             background: #1e2b37;
             color: white;
             text-align: center;
-            border-radius: 0;
-            margin-top: 25px;
             text-decoration: none;
             font-weight: 600;
-            transition: background 0.2s;
             border: 1px solid #f7b731;
         }
         .download-btn:hover {
@@ -263,7 +249,7 @@
         }
         /* Print friendly */
         @media print {
-            body { background: white; padding: 0; }
+            body { background: white; }
             .cv-container { box-shadow: none; }
             .download-btn { display: none; }
         }
@@ -306,13 +292,12 @@
                 <span class="skill-tag">Freelancing</span>
                 <span class="skill-tag">Cybersecurity</span>
                 <span class="skill-tag">Software Engineering</span>
-                <!-- New skills from certificates -->
                 <span class="skill-tag">Video Editing</span>
                 <span class="skill-tag">Animation</span>
                 <span class="skill-tag">Entrepreneurship</span>
             </div>
 
-            <!-- Languages (plain text) -->
+            <!-- Languages -->
             <div class="section-title">Languages</div>
             <div class="language-item">
                 <span>English</span>
@@ -371,7 +356,7 @@
                 </ul>
             </div>
 
-            <!-- Education (UPDATED with Virtual University) -->
+            <!-- Education – updated to show only "In Progress" for BSCS -->
             <div class="section-title">Education</div>
             <div class="edu-entry">
                 <div class="degree">Bachelor of Science in Computer Science</div>
@@ -412,11 +397,7 @@
         </div>
     </div>
 
-
-
     <!-- Font Awesome for icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </body>
-
 </html>
-
